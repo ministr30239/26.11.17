@@ -1,0 +1,32 @@
+Задано число n. Требуется найти число от 1 до n, включительно, которое имеет максимальное число положительных целых делителей. Если есть несколько чисел от 1 до n с максимальным числом делителей, выведите любое из них.
+
+
+#include <iostream>
+using namespace std;
+int main (){
+ int a,b;
+ cout<<"Enter the range: "<<endl;
+ cout<<"from ";
+ cin >> a;
+ cout<<"to ";
+ cin >> b;
+ int max,n;
+    n = 0;
+    max = 0;
+    while (a <= b){
+        int d = 1;
+        int cou = 0;
+        while (d <= a){
+            if (a % d == 0) cou++;
+            d++;
+            }
+        if (cou>max){
+          max = cou;
+          n = a;
+        }
+        a++;
+        }
+ cout<<"Number with the greatest number of dividers  "<< n << endl;
+ cout<<"Number of dividers  "<< max <<endl;
+ return 0;
+}
